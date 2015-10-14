@@ -1,0 +1,9 @@
+StepperMotor	KEYWORD1
+initHalfStepMode	KEYWORD2
+initFullStepMode	KEYWORD2
+setStepDelay	KEYWORD2
+addMovementCompletionHandler	KEYWORD2
+rotateClockwise	KEYWORD2
+rotateCounterClockwise	KEYWORD2
+update	KEYWORD2
+stop	KEYWORD2
