@@ -40,9 +40,6 @@
 #include "StepperMotor.h"
 #include "BaseTimedElement.h"
 
-#define halfStep 1
-#define fullStep 2
-
 #define stopped 0
 #define clockwise 1
 #define counterClockwise 2
@@ -65,15 +62,9 @@ StepperMotor::StepperMotor(int pinA, int pinB, int pinC, int pinD)
 | P U B L I C   M E T H O D S |
 \*****************************/
 
-StepperMotor* StepperMotor::initHalfStepMode()
+StepperMotor* StepperMotor::setStepMode(int stepMode)
 {
-  _mode = halfStep;
-  return this;
-}
-
-StepperMotor* StepperMotor::initFullStepMode()
-{
-  _mode = fullStep;
+  _mode = stepMode;
   return this;
 }
 
@@ -167,11 +158,19 @@ void StepperMotor::applyEngineStep()
     digitalWrite(_pinC, _engineStep == 4 || _engineStep == 5 || _engineStep == 6 ? HIGH : LOW);
     digitalWrite(_pinD, _engineStep == 6 || _engineStep == 7 || _engineStep == 8 ? HIGH : LOW);
   }
-  else if (_mode == fullStep)
+  else if (_mode == fullStepSinglePhase)
   {
     digitalWrite(_pinA, _engineStep == 1 || _engineStep == 5 ? HIGH : LOW);
     digitalWrite(_pinB, _engineStep == 2 || _engineStep == 6 ? HIGH : LOW);
     digitalWrite(_pinC, _engineStep == 3 || _engineStep == 7 ? HIGH : LOW);
     digitalWrite(_pinD, _engineStep == 4 || _engineStep == 8 ? HIGH : LOW);
+  }
+  else if (_mode == fullStepDualPhase)
+  {
+    digitalWrite(_pinA, _engineStep == 1 || _engineStep == 4 || _engineStep == 5 || _engineStep == 8 ? HIGH : LOW);
+    digitalWrite(_pinB, _engineStep == 1 || _engineStep == 2 || _engineStep == 5 || _engineStep == 6 ? HIGH : LOW);
+    digitalWrite(_pinC, _engineStep == 2 || _engineStep == 3 || _engineStep == 6 || _engineStep == 7 ? HIGH : LOW);
+    digitalWrite(_pinD, _engineStep == 3 || _engineStep == 4 || _engineStep == 7 || _engineStep == 8 ? HIGH : LOW);
+    
   }
 }

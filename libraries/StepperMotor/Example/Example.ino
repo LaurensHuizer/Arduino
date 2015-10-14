@@ -55,25 +55,25 @@ void movementCompleted()
   clockwise = !clockwise; // For this demo invert clockwise, to move back and forth
   if (clockwise)
   {
-    motor.initFullStepMode()       // Set motor to perform full steps (2048 = 360 degrees, based on 28BYJ-48)
+    motor.setStepMode(StepperMotor::fullStepDualPhase) // Set motor to perform full steps (2048 = 360 degrees, based on 28BYJ-48)
          -> setStepDelay(4)        // Set a delay between each step of 4 ms
          -> rotateClockwise(1024); // Perform 1024 steps (rotate the shaft 180 degrees, based on 28BYJ-48)
   }
   else
   {
-    motor.initHalfStepMode()              // Set motor to perform half steps (4096 = 360 degrees, based on 28BYJ-48)
-         -> setStepDelay(1)               // Set a delay between each step of 1 ms
-         -> rotateCounterClockwise(4096); // Perform 4096 steps (rotate the shaft 360 degrees, based on 28BYJ-48)
+    motor.setStepMode(StepperMotor::halfStep) // Set motor to perform half steps (4096 = 360 degrees, based on 28BYJ-48)
+         -> setStepDelay(1)                   // Set a delay between each step of 1 ms
+         -> rotateCounterClockwise(4096);     // Perform 4096 steps (rotate the shaft 360 degrees, based on 28BYJ-48)
   }
 }
 
 void setup() 
 {
   //setup of the motor, all these methods 
-  motor.initFullStepMode()       // Set motor to perform full steps (2048 = 360 degrees, based on 28BYJ-48)
+  motor.setStepMode(StepperMotor::fullStepSinglePhase) // Set motor to perform full steps (2048 = 360 degrees, based on 28BYJ-48)
        -> addMovementCompletionHandler(&movementCompleted) // Add a method that is called when the motor has performed the amount of steps
-       -> setStepDelay(4)        // Set a delay between each step of 4 ms
-       -> rotateClockwise(1024); // Perform 2048 steps (rotate the shaft 180 degrees, based on 28BYJ-48)
+       -> setStepDelay(4)              // Set a delay between each step of 4 ms
+       -> rotateClockwise(1024);       // Perform 2048 steps (rotate the shaft 180 degrees, based on 28BYJ-48)
 }
 
 void loop() 

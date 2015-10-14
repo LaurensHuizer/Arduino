@@ -46,8 +46,7 @@ class StepperMotor : public BaseTimedElement
 {
   public:
     StepperMotor(int pinA, int pinB, int pinC, int pinD);
-    StepperMotor* initHalfStepMode();
-    StepperMotor* initFullStepMode();
+    StepperMotor* setStepMode(int stepMode);
     StepperMotor* setStepDelay(int ms);
     StepperMotor* addMovementCompletionHandler(void (*movementCompleted)());
     void rotateClockwise();
@@ -56,6 +55,10 @@ class StepperMotor : public BaseTimedElement
     void rotateCounterClockwise(int steps);
     void update();
     void stop();
+    
+    static const short halfStep = 1;
+    static const short fullStepSinglePhase = 2;
+    static const short fullStepDualPhase = 3;
   private:
     void setRotationDirection(int direction, int steps);
     void applyEngineStep();
