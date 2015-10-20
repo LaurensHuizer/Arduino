@@ -34,7 +34,7 @@
   <name>                   | yyyy-mm-dd | <description>
 */
 
-// Both the BaseTimedElement class and the LcdButtons class must be referenced
+// Both the BaseTimedElement class and the PowerSupply class must be referenced
 #include <BaseTimedElement.h>
 #include <PowerSupply.h>
 
