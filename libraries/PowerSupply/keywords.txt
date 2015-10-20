@@ -1,0 +1,7 @@
+PowerSupply	KEYWORD1
+subscribeOverloadProtection	KEYWORD2
+setAutoRecovery	KEYWORD2
+turnOn	KEYWORD2
+turnOff	KEYWORD2
+isOn	KEYWORD2
+update	KEYWORD2
