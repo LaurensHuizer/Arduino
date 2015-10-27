@@ -1,0 +1,6 @@
+CapacitiveButton	KEYWORD1
+subscribeClick	KEYWORD2
+subscribeDoubleClick	KEYWORD2
+subscribeHold	KEYWORD2
+subscribeHoldRelease	KEYWORD2
+update	KEYWORD2
