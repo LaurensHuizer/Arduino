@@ -1,0 +1,10 @@
+HumTempSensor	KEYWORD1
+setReadInterval	KEYWORD2
+inFahrenheit	KEYWORD2
+update	KEYWORD2
+
+humidity	LITERAL1
+temperature	LITERAL1
+initialized	LITERAL1
+humidityEvents	LITERAL1
+temperatureEvents	LITERAL1

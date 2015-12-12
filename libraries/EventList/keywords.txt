@@ -1,0 +1,7 @@
+EventList	KEYWORD1
+addEqualTo	KEYWORD1
+addGreaterThan	KEYWORD2
+addSmallerThen	KEYWORD2
+addBetween	KEYWORD2
+addNotBetween	KEYWORD2
+checkEvents	KEYWORD2
