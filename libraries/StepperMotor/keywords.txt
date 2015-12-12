@@ -7,3 +7,6 @@ rotateClockwise	KEYWORD2
 rotateCounterClockwise	KEYWORD2
 update	KEYWORD2
 stop	KEYWORD2
+halfStep	LITERAL1
+fullStepSinglePhase	LITERAL1
+fullStepDualPhase	LITERAL1

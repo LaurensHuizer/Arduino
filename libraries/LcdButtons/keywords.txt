@@ -1,2 +1,7 @@
 LcdButtons	KEYWORD1
 update	KEYWORD2
+select	LITERAL1
+up	LITERAL1
+down	LITERAL1
+left	LITERAL1
+right	LITERAL1
